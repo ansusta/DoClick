@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+</head>
+<body>
+    <form id="loginForm" class="container text-center" style="max-width: 500px; margin: 0 auto;">
+        <div class="header-curve"></div>
+        <div class="container text-center">
+            <img src="rs/L.jpg" alt="Logo" class="logo">
+            <h1 class="app-name mt-3">DoClick</h1>
+
+            <h3 class="mt-3 fw-bold">Se connecter</h3>
+            <div class="text-start mb-3">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
+            </div>
+            <div class="input-group mt-4">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="text" id="credential" class="form-control" placeholder="Entrez votre adresse mail ou votre numero de telephone">
+                <div id="emailError" class="invalid-feedback"></div>
+            </div>
+            
+            <div class="input-group mt-3">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" id="password" class="form-control" placeholder="Entrez votre mot de passe">
+                <span class="input-group-text" id="togglePassword">
+                    <i class="fas fa-eye"></i>
+                  </span>
+            </div>
+            
+            <div class="text-end mt-2">
+                <a href="motPassReset.html" class="text-primary">Mot de passe oublié?</a>
+            </div>
+            
+            <button class="btn btn-success w-100 mt-4" type="submit"> Se connecter</button>
+            
+            <p class="mt-3">Vous n’avez pas de compte? <a href="signup.html" class="text-primary">Inscrivez-vous</a></p>
+        </div>
+    </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="login.js" type="module"></script>
+</body>
+</html>

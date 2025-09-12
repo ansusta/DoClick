@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseils Santé</title>
+    <link rel="stylesheet" href="conseils.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="top-bar">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+            <h1 class="highlight">Conseils Santé</h1>
+        </div>
+        <p>Découvrez des ressources utiles pour mieux comprendre et prévenir les maladies.</p>
+    </div>
+
+    <div class="container">
+        <div class="advice-card" onclick="openLink('https://www.ameli.fr')">
+            <h3>Assurance Maladie</h3>
+            <p>Des articles officiels sur la prévention, les symptômes et traitements.</p>
+        </div>
+        <div class="advice-card" onclick="openLink('https://www.who.int/fr')">
+            <h3>Organisation Mondiale de la Santé</h3>
+            <p>Infos globales sur les maladies et conseils santé fiables.</p>
+        </div>
+        <div class="advice-card" onclick="openLink('https://www.santepubliquefrance.fr/')">
+            <h3>Santé Publique France</h3>
+            <p>Recommandations sanitaires et bulletins épidémiologiques.</p>
+        </div>
+    </div>
+
+    <script defer src="conseils.js"></script>
+</body>
+</html>

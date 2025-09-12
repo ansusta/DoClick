@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Médecins</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="icon/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="doctors.css" />
+</head>
+<body class="bg-light">
+  <div class="container py-3">
+    <div class="custom-header mb-4 d-flex align-items-center justify-content-between rounded-4 p-3">
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="text-white me-3 fs-5" id="goBack"><i class="fas fa-arrow-left"></i></a>
+        <div>
+          <h4 class="mb-0 text-white">Médecin</h4>
+          <p class="text-white small mb-0">Trouvez un spécialiste</p>
+        </div>
+      </div>
+      <div class="header-icon rounded-circle d-flex align-items-center justify-content-center">
+        <i class="fas fa-user-md"></i>
+      </div>
+    </div>
+    <div class="mb-4 position-relative">
+      <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+      <input type="text" class="form-control rounded-pill ps-5" id="searchBar" placeholder="Recherchez un médecin...">
+    </div>
+    <div class="row mb-4">
+      <div class="col-6">
+        <select id="filterSpeciality" class="form-select custom-select-turquoise">
+          <option value="">Toutes les spécialités</option>
+          <option value="Médecine générale">Médecine générale</option>
+          <option value="Pneumologie">Pneumologie</option>
+          <option value="Chirurgie Dentaire">Chirurgie Dentaire</option>
+          <option value="Psychologie">Psychologie</option>
+          <option value="Pédiatrie">Pédiatrie</option>
+          <option value="Chirurgie">Chirurgie</option>
+          <option value="Cardiologie">Cardiologie</option>
+          <option value="Ophtalmologie">Ophtalmologie</option>
+          <option value="Dermatologie">Dermatologie</option>
+          
+        </select>
+      </div>
+      <div class="col-6">
+        <select id="sortByName" class="form-select custom-select-turquoise">
+          <option value="asc">Trier par nom : A-Z</option>
+          <option value="desc">Trier par nom : Z-A</option>
+        </select>
+      </div>
+    </div>
+    <div id="doctorsList"></div>
+  </div>
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item "><i class="fas fa-home"></i></a>
+    <a href="patientReservation.html" class="nav-item "><i class="fas fa-calendar-alt"></i></a>
+    <a href="notificationsD.html"  class="nav-item "><i class="fas fa-bell"></i></a>
+    <a href="doctors.html"  class="nav-item active "><i class="fas fa-search"></i></a> 
+    <a href="profile.html"  class="nav-item "><i class="fas fa-user"></i></a>
+</nav>
+  <div class="modal fade" id="doctorModal" tabindex="-1" aria-labelledby="doctorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="doctorModalLabel">Détails du médecin</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="doctorModalBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery/jquery.min.js"></script>
+  <script src="popper/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="module" src="doctors.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tableau de bord Admin</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="icon/all.min.css" />
+  <style>
+    body {
+      background-color: #cbcbcb; /* gris très clair */
+    }
+
+    .sidebar {
+      min-height: 100vh;
+      background-color: rgb(47, 123, 128); /* gris clair transparent */
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar .nav-link {
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    .sidebar .nav-link.active {
+      color: #000;
+      background-color: rgba(7, 7, 7, 0.3); /* gris foncé transparent */
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        transform: translateX(-100%);
+        z-index: 1050;
+      }
+
+      .sidebar.show {
+        transform: translateX(0);
+      }
+
+      body.sidebar-open {
+        overflow: hidden;
+      }
+
+      #main-content {
+        margin-left: 0 !important;
+      }
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sidebar .nav-link.text-danger {
+      color: #dc3545 !important;
+    }
+    .sidebar .nav-link.text-danger:hover {
+      background-color: rgba(220, 53, 69, 0.1);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-3 col-lg-2 sidebar">
+        <div class="pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" data-page="doctors">
+                <i class="fas fa-user-md me-2"></i>Médecins
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-page="patients">
+                <i class="fas fa-users me-2"></i>Patients
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-page="appointments">
+                <i class="fas fa-calendar me-2"></i>Rendez-vous
+              </a>
+            </li>
+          </ul>
+          <div class="mt-auto pt-3" onclick="logout()">
+            <ul class="nav flex-column">
+              <li class="nav-item"  >
+                <a class="nav-link text-danger">
+                  <i class="fas fa-sign-out-alt me-2" id="logoutBtn"></i>Déconnexion
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+
+      <main class="col-12 col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+        <button class="btn btn-dark d-md-none m-2" id="toggleSidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div id="main-content"></div>
+      </main>
+    </div>
+  </div>
+  <template id="doctors-view">
+    <h2 class="mb-4">Tableau de bord des médecins</h2>
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: #808080;">
+          <div class="card-body">
+            <h5 class="card-title">Nombre total de médecins</h5>
+            <p class="card-text fs-4" id="totalD"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: rgb(47, 123, 128);">
+          <div class="card-body">
+            <h5 class="card-title">Médecins disponibles</h5>
+            <p class="card-text fs-4" id="availableD"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <a href="addDoctor.html" class="btn btn-outline-dark me-2">
+        <i class="fas fa-user-plus me-1"></i>Ajouter un médecin
+      </a>
+      <a href="doctors.html" class="btn btn-outline-secondary me-2">
+        <i class="fas fa-edit me-1"></i>Voir les médecins
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Médecins populaires</h5>
+        <div id="topDoctorsList">
+        </div>
+      </div>
+    </div>
+    
+  </template>
+  <template id="patients-view">
+    <h2 class="mb-4">Tableau de bord des patients</h2>
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: #595f61;">
+          <div class="card-body">
+            <h5 class="card-title">Nombre total de patients</h5>
+            <p class="card-text fs-4" id="totalP"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: rgb(47, 123, 128);">
+          <div class="card-body">
+            <h5 class="card-title">Patients actifs</h5>
+            <p class="card-text fs-4" id="availableP"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: #bd4d4d;">
+          <div class="card-body">
+            <h5 class="card-title">Bloqués</h5>
+            <p class="card-text fs-4" id="bannedP">25</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <a href="tousUtilisateurs.html" class="btn btn-outline-secondary me-2">
+          <i class="fas fa-edit me-1"></i>Voir patients
+        </a>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Patients ayant annulé le plus de rendez-vous</h5>
+        <div id="topCancellersList">
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="appointments-view">
+    <h2 class="mb-4">Tableau de bord des rendez-vous</h2>
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: #808080;">
+          <div class="card-body">
+            <h5 class="card-title">Total des rendez-vous</h5>
+            <p class="card-text fs-4" id="totalA"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white" style="background-color: #3daca1;">
+          <div class="card-body">
+            <h5 class="card-title">En cours</h5>
+            <p class="card-text fs-4" id="ongoingA"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card text-white" style="background-color: #bd4d4d;">
+          <div class="card-body">
+            <h5 class="card-title">Annulés</h5>
+            <p class="card-text fs-4" id="cancelledA"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Terminés</h5>
+            <p class="card-text fs-4" id="completedA"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <a href="TousReservation.html" class="btn btn-outline-dark me-2">
+        <i class="fas fa-user-plus me-1"></i>Voir les rendez-vous
+      </a>
+    </div>
+
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rendez-vous récents</h5>
+        <div id="latestAppointmentsList">
+        </div>
+      </div>
+  </template>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="adminDashboard.js"></script>
+</body>
+</html>

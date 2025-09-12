@@ -1,0 +1,130 @@
+.header {
+    position: relative;
+    background: #00b5ad;
+    padding: 40px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+}
+
+
+
+body {
+    background: linear-gradient(to bottom, #00b5ad, #00b5ad);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+#editProfileBtn {
+    display: inline-block; 
+    margin: 20px auto;  
+    text-align: center;   
+    box-sizing: border-box;
+}
+
+
+.user-info {
+    margin-top: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.menu-container {
+    background: #ffffff;
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #6cc5a0;
+}
+
+.logout {
+    color: red;
+    font-weight: bold;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00b5ad;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; 
+}
+a.menu-item {
+    text-decoration: none; 
+    color: inherit;
+}
+
+.menu-item:hover {
+    background-color:#2a8a88; 
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00b5ad;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.bottom-nav .active {
+    background: white;
+    color: #008080;
+    border-radius: 50%;
+    padding: 10px;
+}
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}

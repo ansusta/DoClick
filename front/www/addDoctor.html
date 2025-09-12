@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Doctor</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="icon/all.min.css" />
+  <link rel="stylesheet" href="motpassReset.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .reset-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #198754;
+  font-weight: bold;
+  font-size: 1.5rem; /* Smaller title */
+  padding-top: 20px;  /* Space below arrow */
+}
+
+.back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #198754;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 5px;
+}
+
+
+    .reset-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #198754;
+      font-weight: bold;
+    }
+
+    .btn-success {
+      background: #00b5ad;
+      border: none;
+      border-radius: 25px;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    .btn-success:hover {
+      background: #019c96;
+    }
+  </style>
+</head>
+<body>
+  <div class="reset-card">
+    <a href="adminDashboard.html" class="back-arrow">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <h2>ajouter un medecin</h2>
+
+    <form id="addDoctorForm">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="specialite" class="form-label">Specialté</label>
+        <input type="text" class="form-control" id="specialite" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="numTel" class="form-label">numero du telephone</label>
+        <input type="text" class="form-control" id="numTel" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="diplome" class="form-label">Diplome</label>
+        <input type="text" class="form-control" id="diplome" required />
+      </div>
+
+      <button type="submit" class="btn btn-success">Ajouter medecin</button>
+    </form>
+
+    <div id="message" class="mt-3 text-center"></div>
+  </div>
+
+  <script type="module" src="addDoctor.js"></script>
+</body>
+</html>

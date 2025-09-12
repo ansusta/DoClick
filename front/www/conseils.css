@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+}
+
+.header {
+    background: #00b5ad;
+    padding: 40px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    text-align: center;
+}
+
+.header .highlight {
+    color: #004d40;
+    margin-bottom: 5px;
+}
+
+.container {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.advice-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.advice-card:hover {
+    transform: scale(1.03);
+    background-color: #e0f7fa;
+}
+
+.advice-card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.advice-card h3 {
+    margin: 10px 0 5px;
+    color: #008080;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00b5ad;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    font-size: 22px;
+}
+
+.bottom-nav .active {
+    background: white;
+    color: #008080;
+    border-radius: 50%;
+    padding: 10px;
+}
+.header {
+    background: #00b5ad;
+    padding: 40px 20px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    position: relative;
+    text-align: center; /* centre le h1 */
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 10px;
+}
+

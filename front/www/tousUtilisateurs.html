@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des Utilisateurs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="icon/all.min.css">
+
+
+
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fdf9;
+      padding-bottom: 80px;
+    }
+
+    h2 {
+      color: #00b5ad;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .user-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-left: 5px solid #00b5ad;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background-color: white;
+  transition: transform 0.2s ease;
+}
+
+.user-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.1);
+}
+
+.pfp {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.card-body {
+  flex: 1;
+  padding: 0;
+  text-align: left;
+}
+
+    .modal-content {
+      border-radius: 1rem;
+    }
+
+    .modal-header {
+      background-color: #00b5ad;
+      color: white;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+
+    .modal-body h5 {
+      color: #00b5ad;
+    }
+
+    .btn-success {
+      background-color: #1abc9c;
+      border: none;
+    }
+
+    .btn-success:hover {
+      background-color: #17a589;
+    }
+
+    .btn-danger {
+      background-color: #e74c3c;
+      border: none;
+    }
+
+    .btn-danger:hover {
+      background-color: #c0392b;
+    }
+    .pfp {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+
+    #modalPfp {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container px-3 py-4">
+    <a href="adminDashboard.html" class="mb-3 d-inline-block text-decoration-none" style="color: #00b5ad; font-weight: 500;">
+      <i class="fas fa-arrow-left me-2"></i>Retour au tableau de bord
+    </a>
+    
+    
+    <h2>Tous les utilisateurs</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+  <input type="text" id="searchInput" class="form-control me-3" style="max-width: 300px;" placeholder="Rechercher un utilisateur...">
+  <select id="sortSelect" class="form-select" style="max-width: 200px;">
+    <option value="asc">Trier A → Z</option>
+    <option value="desc">Trier Z → A</option>
+  </select>
+</div>
+
+    <div id="patientContainer"></div>
+  </div>
+  
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Informations de l'utilisateur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalPfp" src="" alt="Photo de profil" class="mb-3">
+          <h5 id="modalNom">Nom</h5>
+          <p><strong>Email :</strong> <span id="modalEmail"></span></p>
+          <p><strong>numero de telephone :</strong> <span id="modalNumTel"></span></p>
+          <p><strong>créé le :</strong> <span id="modalCreated"></span></p>
+          <p><strong> statut :</strong> <span id="modalStatut"></span></p>
+          <p><strong>née le :</strong> <span id="modalNais"></span></p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button class="btn btn-danger" id="ban">Bloquer</button>
+          <button class="btn btn-success" id="unban">Débloquer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="tousUtilisateurs.js" type="module">
+  </script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

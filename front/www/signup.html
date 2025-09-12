@@ -1,0 +1,77 @@
+<!--completed-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+</head>
+<body>
+    <form id="signupForm" class="container text-center" style="max-width: 500px; margin: 0 auto;">
+        <div class="text-start mb-3">
+            <a href="index.html">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+        </div>
+        
+        <h3 class="fw-bold">Créer un compte</h3>
+        
+        <div class="input-group mt-4">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control" id="username" placeholder="Entrez votre nom" required>
+            <div id="usernameError" class="invalid-feedback"></div>
+            
+        </div>
+        
+        <div class="input-group mt-3">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <input type="text" class="form-control" id="credential" placeholder="Entrez votre email ou numero du telephone" required>
+            <div id="emailError" class="invalid-feedback"></div>
+        </div>
+        
+        <div class="input-group mt-3">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
+            <div id="passwordError" class="invalid-feedback"></div>
+            <span class="input-group-text" id="togglePassword">
+                <i class="fas fa-eye"></i>
+              </span>
+        </div>
+        <div class="input-group mt-3">
+            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+            <input type="date" class="form-control" id="birthdate" required>
+            <div id="birthdateError" class="invalid-feedback"></div>
+        </div>
+        
+        <div class="form-check mt-3 text-start">
+            <input type="checkbox" class="form-check-input" id="terms" required>
+            <label class="form-check-label" for="terms">
+                J’accepte les <a href="terms.html" class="text-primary">Conditions d’utilisation</a> et la <a href="privacyPolicy.html" class="text-primary">Politique de confidentialité</a>
+            </label>
+        </div>
+        
+        <button class="btn btn-success w-100 mt-4" type="submit">S'inscrire</button>
+        
+        <p class="mt-3">Vous avez déjà un compte ? <a href="Login.html" class="text-primary">Se connecter</a></p>
+    </form>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div id="toastMessage" class="toast-body">
+        <!-- Error message will go here -->
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="signup.js" type="module"></script>
+</body>
+</html>

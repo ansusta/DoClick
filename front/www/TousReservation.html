@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+    <style>
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f8fdf9;
+          padding-bottom: 80px;
+        }
+      
+        h3 {
+          color: #00b5ad;
+          font-weight: bold;
+          text-align: center;
+          margin: 1.5rem 0;
+        }
+      
+        .tab-button {
+          width: 50%;
+          border-radius: 0;
+          font-weight: 600;
+          padding: 1rem;
+          font-size: 1.1rem;
+          transition: background-color 0.3s ease;
+        }
+      
+        #btnUpcoming {
+          background-color: #00b5ad;
+          border-color: #00b5ad;
+        }
+      
+        #btnUpcoming:hover {
+          background-color: #009c99;
+        }
+      
+        #btnHistory {
+          background-color: #e0f7f5;
+          color: #00b5ad;
+          border-color: #cceeea;
+        }
+      
+        #btnHistory:hover {
+          background-color: #cceeea;
+        }
+      
+        .hidden {
+          display: none;
+        }
+      
+        .list-group {
+          padding: 0;
+        }
+      
+        .user-card {
+          display: flex;
+          align-items: center;
+          border-left: 5px solid #00b5ad;
+          border-radius: 1rem;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          margin-bottom: 1rem;
+          padding: 1rem;
+          background-color: white;
+          transition: transform 0.2s ease;
+        }
+      
+        .user-card:hover {
+          transform: scale(1.01);
+          box-shadow: 0 4px 12px rgba(0, 128, 0, 0.1);
+        }
+      
+        .pfp {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-right: 1rem;
+          flex-shrink: 0;
+        }
+      
+        .card-body {
+          flex: 1;
+          padding: 0;
+          text-align: left;
+        }
+      
+        .card-body h5 {
+          color: #00b5ad;
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+        }
+      
+        .card-body p {
+          margin: 0;
+          font-size: 0.95rem;
+          color: #333;
+        }
+      
+        .btn-success {
+          background-color: #1abc9c;
+          border: none;
+        }
+      
+        .btn-success:hover {
+          background-color: #17a589;
+        }
+      
+        .btn-danger {
+          background-color: #e74c3c;
+          border: none;
+        }
+      
+        .btn-danger:hover {
+          background-color: #c0392b;
+        }
+      
+        .badge {
+          padding: 0.4em 0.6em;
+          font-size: 0.75rem;
+          border-radius: 0.4rem;
+        }
+      
+        .bg-success {
+          background-color: #2ecc71 !important;
+          color: white;
+        }
+      
+        .bg-danger {
+          background-color: #e74c3c !important;
+          color: white;
+        }
+        a{
+            color: #00b5ad;
+        }
+      </style>
+      
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="mb-3">
+            <a href="adminDashboard.html" class="text-decoration-none">
+              <i class="fas fa-arrow-left"></i> revenir
+            </a>
+          </div>
+        
+      <div class="d-flex">
+        <button class="btn tab-button" id="btnUpcoming">a venir</button>
+        <button class="btn tab-button" id="btnHistory">Historique</button>
+      </div>
+  
+      <div id="upcomingSection" class="mt-3">
+        <h3> Reservations a venir</h3>
+        <ul class="list-group" id="upcomingList">
+          
+        </ul>
+      </div>
+  
+      <div id="historySection" class="mt-3 hidden">
+        <h3>History</h3>
+        <ul class="list-group" id="historyList">
+          <!-- You can duplicate cards here with other info -->
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reservationModalLabel">Détails du reservation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>medecin:</strong> <span id="modalDoctor"></span></p>
+            <p><strong>Date:</strong> <span id="modalDate"></span></p>
+            <p><strong>heure:</strong> <span id="modalTime"></span></p>
+            <p><strong>Specialté:</strong> <span id="modalSpecialty"></span></p>
+            <p><strong>utilisateur:</strong> <span id="modalUser"></span></p>
+            <p><strong>Statut:</strong> <span id="modalStatus" class="badge bg-success"></span></p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">annuler rendez-vous</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="jquery/jquery.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="TousReservation.js" type="module">
+
+    </script>
+  </body>
+  
+</html>

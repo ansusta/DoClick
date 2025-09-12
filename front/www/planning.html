@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Créer un Planning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .reset-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .reset-card h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #198754;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding-top: 10px;
+    }
+
+    .btn-primary {
+      background: #00b5ad;
+      border: none;
+      border-radius: 25px;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #019c96;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      flex: 0 0 45%;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #198754;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .back-arrow:hover {
+      color: #146c43;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reset-card">
+    <a href="adminDashboard.html" class="back-arrow" title="Retour au tableau de bord">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    
+    <h2> planning médecin</h2>
+    <form id="planningForm">
+
+      <div class="mb-3">
+        <label class="form-label">Jours de travail</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="days" value="0"> Dimanche</label>
+          <label><input type="checkbox" name="days" value="1"> Lundi</label>
+          <label><input type="checkbox" name="days" value="2"> Mardi</label>
+          <label><input type="checkbox" name="days" value="3"> Mercredi</label>
+          <label><input type="checkbox" name="days" value="4"> Jeudi</label>
+          <label><input type="checkbox" name="days" value="5"> Vendredi</label>
+          <label><input type="checkbox" name="days" value="6"> Samedi</label>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-12 col-md-6">
+          <label for="startTime" class="form-label">Heure de début</label>
+          <input type="time" class="form-control" id="startTime" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="endTime" class="form-label">Heure de fin</label>
+          <input type="time" class="form-control" id="endTime" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Créer le planning</button>
+    </form>
+
+    <div id="status"></div>
+  </div>
+
+  <script src="planning.js" type="module"></script>
+</body>
+</html>

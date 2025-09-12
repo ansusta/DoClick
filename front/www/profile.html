@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="icon/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay"></div>
+        <h2 class="text-white">Mon compte</h2>
+    </header>
+    <div class="profile-container">
+        <div class="profile-icon">
+            <img src="rs/user.jpg" class="profile-img" alt="Profile Picture" id="ProfilePic">
+            
+        </div>
+        <h4 class="userName" id="userName"> nom prenom</h4>
+        <h4 class="userEmail" id="userEmail"> nom email</h4>
+       
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-success" id="editProfileBtn" onclick="editProfile()">Modifier profil</button>
+    </div>
+    
+    <div class="menu-container">
+        <a href="favorites.html" class="menu-item">
+            <div><i class="fas fa-bookmark"></i> Mes favoris</div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        <div class="menu-item" onclick="mesReservations()">
+            <div><i class="fas fa-calendar-check" ></i> Mes rendez-vous</div>
+            <i class="fas fa-chevron-right"></i>
+        </div>       
+        <div class="menu-item logout" onclick="logout()" id="logoutBtn">
+            <div><i class="fas fa-sign-out-alt"></i> Déconnexion</div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item "><i class="fas fa-home"></i></a>
+        <a href="patientReservation.html" class="nav-item "><i class="fas fa-calendar-alt"></i></a>
+        <a href="notificationsD.html"  class="nav-item "><i class="fas fa-bell"></i></a>
+        <a href="doctors.html"  class="nav-item  "><i class="fas fa-search"></i></a> 
+        <a href="profile.html"  class="nav-item active"><i class="fas fa-user"></i></a>
+    </nav>
+    <!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="editProfileForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProfileModalLabel">Modifier le profil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="newName" class="form-label">Nouveau nom</label>
+              <input type="text" class="form-control" id="newName" required>
+            </div>
+            <div class="mb-3">
+              <label for="newProfilePic" class="form-label">Nouvelle photo de profil</label>
+              <input type="file" class="form-control" id="newProfilePic" accept="image/*">
+              <img id="previewImg" src="rs/user.jpg" alt="Aperçu" class="mt-2 rounded" style="width: 100px; height: 100px; object-fit: cover;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+    <script type="module" src="profile.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

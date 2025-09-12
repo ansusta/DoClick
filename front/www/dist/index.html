@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Doclick</title>
+   
+   
+  
+  <link rel="stylesheet" crossorigin href="/assets/index-CSxIso74.css">
+</head>
+<body>
+
+ <header class="header">
+    <div class="overlay"></div>
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <h2 class="text-white mb-0">Trouvez votre <span class="highlight">médecin</span> et réservez un rendez-vous</h2>
+        <a href="Login.html" class="login-btn text-white text-decoration-none">
+            <i class="fas fa-sign-in-alt" id="connecter"></i>
+            <span class="login-text" id ="msg">Se connecter</span>
+        </a>  
+    </div>
+    <div class="search-bar mt-3">
+        <i class="fas fa-search"></i>
+        <input type="text" class="form-control" id="searchForm" placeholder="Recherchez un médecin...">
+    </div>
+</header>
+
+
+
+ 
+<h4>Spécialités populaires</h4>
+<div class="categories">
+    <div class="category" onclick="goToDoctors('Médecine générale')"><i class="fas fa-stethoscope"></i> <p>Généraliste</p></div>
+    <div class="category" onclick="goToDoctors('Pneumologie')"><i class="fas fa-lungs"></i> <p>Pneumologue</p></div>
+    <div class="category" onclick="goToDoctors('Chirurgie Dentaire')"><i class="fas fa-tooth"></i> <p>Dentiste</p></div>
+    <div class="category" onclick="goToDoctors('Psychologie')"><i class="fas fa-brain"></i> <p>Psychiatre</p></div>
+    <div class="category" onclick="goToDoctors('Pédiatrie')"><i class="fas fa-child"></i> <p>Pédiatre</p></div>
+    <div class="category" onclick="goToDoctors('Chirurgie')"><i class="fas fa-user-md"></i> <p>Chirurgien</p></div>
+    <div class="category" onclick="goToDoctors('Cardiologie')"><i class="fas fa-heartbeat"></i> <p>Cardiologue</p></div>
+    <div class="category" onclick="goToDoctors('Ophtalmologie')"><i class="fas fa-eye"></i> <p>Ophtalmologue</p></div>
+    <div class="category" onclick="goToDoctors('Dermatologie')"><i class="fas fa-sun"></i> <p>Dermatologue</p></div>
+</div>
+
+
+
+ 
+    
+
+
+    <section class="promo">
+        <div class="container">
+            <div class="promo-box">
+                <p>Protection précoce pour votre santé et celle de votre famille</p>
+                <a href="conseils.html" class="btn btn-info">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active"><i class="fas fa-home"></i></a>
+        <a href="patientReservation.html" class="nav-item "><i class="fas fa-calendar-alt"></i></a>
+        <a href="notificationsD.html"  class="nav-item "><i class="fas fa-bell"></i></a>
+        <a href="doctors.html"  class="nav-item  "><i class="fas fa-search"></i></a> 
+        <a href="profile.html"  class="nav-item "><i class="fas fa-user"></i></a>
+    </nav>
+    <script>
+const user = localStorage.getItem("auth_token");
+if (user) {
+    document.getElementById("connecter").style.display = "none";
+    document.getElementById("msg").style.display = "none";
+}
+
+          document.getElementById("searchForm").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); 
+            let query = this.value.trim();
+            if (query) {
+                window.location.href = `doctors.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+         document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let query = document.getElementById("searchInput").value;
+            if (query) {
+                window.location.href = `doctors.html?search=${encodeURIComponent(query)}`;
+            }
+        });
+
+        function goToDoctors(specialite) {
+            window.location.href = `doctors.html?specialite=${encodeURIComponent(specialite)}`;
+        }
+    </script>
+</body>
+
+</html>

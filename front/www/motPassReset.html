@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialiser le mot de passe</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="motpassReset.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+  
+</head>
+<body>
+    <form id="resetPasswordForm" class="container text-center" style="max-width: 500px; margin: 0 auto;">
+        <div class="header-curve"></div>
+        <div class="container text-center">
+          <div class="text-start mb-3">
+            <a href="index.html">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+        </div>
+            <h3 class="mt-3 fw-bold">Réinitialiser le mot de passe</h3>
+            
+            <div class="input-group mt-4">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="text" id="identifier" class="form-control" placeholder="Entrez votre email ou numéro de téléphone" required />
+                <div id="emailError" class="invalid-feedback"></div>
+            </div>
+
+            <div class="input-group mt-3">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" id="newPassword" class="form-control" placeholder="Nouveau mot de passe" required />
+            </div>
+
+            <div class="input-group mt-3">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmer le mot de passe" required />
+            </div>
+
+            <button class="btn btn-success w-100 mt-4" type="submit">Changer le mot de passe</button>
+            <div id="message" class="mt-3 text-center"></div>
+            
+
+        </div>
+    </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="motpassReset.js" type="module"></script>
+</body>
+</html>

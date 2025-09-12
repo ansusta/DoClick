@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Modifier Médecin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="icon/all.min.css" />
+  <link rel="stylesheet" href="editDoctor.css"/>
+</head>
+<body>
+  <div class="reset-card">
+    <a href="doctors.html" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+    <h2>Modifier les informations du médecin</h2>
+    <form id="editDoctorForm">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="nom" readonly />
+          <button type="button" class="btn btn-outline-secondary" onclick="toggleField('nom')">Modifier le champ</button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="specialite" class="form-label">Spécialité</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="specialite" readonly />
+          <button type="button" class="btn btn-outline-secondary" onclick="toggleField('specialite')">Modifier le champ</button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="numTel" class="form-label">Numéro de téléphone</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="numTel" readonly />
+          <button type="button" class="btn btn-outline-secondary" onclick="toggleField('numTel')">Modifier le champ</button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="diplome" class="form-label">Diplôme</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="diplome" readonly />
+          <button type="button" class="btn btn-outline-secondary" onclick="toggleField('diplome')">Modifier le champ</button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Photo de profil</label>
+        <input type="file" class="form-control" id="image" disabled />
+        <button type="button" class="btn btn-outline-secondary mt-2" onclick="toggleImage()">Modifier la photo</button>
+      </div>
+      <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+    </form>
+  </div>
+
+  <script src="editDoctor.js" type="module">
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="icon/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="notifications.css" />
+</head>
+<body class="bg-light">
+  <div class="container py-3">
+    <div class="custom-header mb-4 d-flex align-items-center justify-content-between rounded-4 p-3">
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="text-white me-3 fs-5"><i class="fas fa-arrow-left"></i></a>
+        <div>
+          <h4 class="mb-0 text-white">Notifications</h4>
+          <p class="text-white small mb-0">Vos notifications récentes</p>
+        </div>
+      </div>
+      <div class="header-icon rounded-circle d-flex align-items-center justify-content-center">
+        <i class="fas fa-bell"></i>
+      </div>
+    </div>
+   
+    <div id="notificationsList">
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item "><i class="fas fa-home"></i></a>
+    <a href="patientReservation.html" class="nav-item "><i class="fas fa-calendar-alt"></i></a>
+    <a href="notificationsD.html"  class="nav-item active "><i class="fas fa-bell"></i></a>
+    <a href="doctors.html"  class="nav-item  "><i class="fas fa-search"></i></a> 
+    <a href="profile.html"  class="nav-item "><i class="fas fa-user"></i></a>
+</nav>
+  
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="notificationModalLabel">Détails de la notification</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="notificationModalBody">
+          <p><strong>Message:</strong> <span id="modalMessage"></span></p>
+          <p><strong>Créé le:</strong> <span id="modalCreatedAt"></span></p>
+          <p><strong>Date du rendez-vous:</strong> <span id="modalDate"></span></p>
+          <p><strong>Heure:</strong> <span id="modalTime"></span></p>
+          <p><strong>Médecin:</strong> <span id="modalDoctor"></span></p>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="jquery/jquery.min.js"></script>
+  <script src="popper/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <script type="module" src="notifications.js"></script>
+</body>
+</html>

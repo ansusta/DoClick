@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites - Doctors</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="icon/all.min.css"
+    integrity="sha512-+1CuF7w7k+..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      background-color: #f0f8f7; /* Light greenish background */
+      font-family: Arial, sans-serif;
+    }
+  
+    .container {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  
+    h4 {
+      color: #00b5ad; /* Green theme for the title */
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+  
+    .doctor-card {
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px #004d40; /* Green shadow */
+      margin-bottom: 1rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      background-color: #ffffff; /* White card background */
+      border: 2px solid#00b5ad; /* Green border */
+    }
+  
+    .doctor-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #00b5ad; /* Green border around image */
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+  
+    .doctor-info {
+      flex-grow: 1;
+    }
+  
+    .doctor-info h6 {
+      color: #00b5ad;/* Green color for doctor name */
+      font-size: 1.1rem;
+    }
+  
+    .doctor-info small {
+      color: #777; /* Muted text for specialization */
+      font-size: 0.9rem;
+    }
+  
+    .heart-icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #f56969; /* Red heart color */
+    }
+  
+    .heart-icon:hover {
+      color: #d32f2f; /* Darker red on hover */
+    }
+  
+    .card:hover {
+      box-shadow: 0 4px 12px #00b5ad; /* Darker green shadow on hover */
+    }
+    /* Styling for the Back Arrow Button */
+.text-green {
+    color: #00b5ad !important; /* Green color */
+}
+
+.text-green:hover {
+    color: #004d40; /* Darker green on hover */
+}
+
+.btn-link {
+    padding: 0;
+    font-size: 1rem;
+}
+
+i.fa-arrow-left {
+  margin-bottom: 30px;
+  margin-top: 10px;
+    font-size: 1.25rem;
+}
+/* Add margin to the container below the back arrow */
+.container.py-4 {
+    margin-top: 80px; /* Adjust this value as needed */
+}
+
+  </style>
+  
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <!-- Back Arrow to Profile -->
+    <a href="profile.html" class="btn btn-link text-decoration-none text-green">
+      <i class="fa-solid fa-arrow-left me-2"></i>profile
+    </a>
+  
+    <h4 class="mb-4">
+      <i class="fa-solid fa-heart me-2"></i>medecins favoris
+    </h4>
+    <div id="favorites-container"></div>
+  </div>
+  
+  
+  </div>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="popper/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="favorites.js" type="module"></script>
+</body>
+</html>

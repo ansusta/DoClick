@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Médecin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon/all.min.css">
+    <link rel="stylesheet" href="reserver.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="doctors.html">
+            <i class="fas fa-arrow-left fs-4" id="back-btn"></i>
+          </a>  
+        <h5 class="m-0" id="page-title">Détails du Médecin</h5>
+        <i class="fas fa-ellipsis-v fs-4" id="more-options-btn"></i>
+        <div class="dropdown-menu dropdown-menu-end p-2" id="options-menu" style="display: none; position: absolute;">
+            <button class="btn btn-sm btn-outline-primary w-100 mb-1" id="favorite-btn" style="display: none;">
+              <i class="fas fa-heart me-1"></i> ajouter aux Favorites
+            </button>
+            <button class="btn btn-sm btn-outline-secondary w-100" id="edit-btn" style="display: none;">
+                <a id="editLink">
+                    <i class="fas fa-edit me-1"></i> modifier planning
+                  </a>
+            </button>
+          </div>
+    </div>
+    <div class="text-center">
+        <img class="doctor-img" alt="" id="doctor-img">
+        <h4 class="mt-2" id="doctor-name"></h4>
+        <p class="text-muted" id="doctor-specialty"></p>
+        <div class="text-success">
+            <span><i class="fas fa-heart text-danger"></i> <span id="doctor-favorites">N/A</span> favoris</span>
+        </div>
+        
+    </div>
+    <div class="mt-4">
+        <h5 class="text-success">À propos</h5>
+        <p class="text-muted" id="doctor-degree"></p>
+        <p id="doctor-phone"></p>
+    </div>
+
+    <div class="mt-3">
+        <div class="d-flex justify-content-between text-center date-selector" id="date-selector">
+        </div>
+    </div>
+    <div class="mt-3 time-selector" id="time-selector">
+    </div>
+    <div id="calendar" class="mt-4"></div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-success book-btn" id="book-appointment-btn">Réserver un rendez-vous</button>
+    </div>
+</div>
+
+<script src="reserver.js" type="module"></script>
+<script src="calendar/core/index.global.min.js"></script>
+<script src="calendar/daygrid/index.global.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+.header {
+    position: relative;
+    background: #00b5ad;
+    padding: 40px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+}
+
+.hidden { display: none; }
+.tab-button { width: 50%; }
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+.bottom-nav a {
+  color: #666;
+  font-size: 1.5rem;
+}
+.bottom-nav .active {
+  color: #007bff;
+}
+
+
+.search-bar {
+    position: relative;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 25px;
+    border: none;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+
+:root {
+    --primary-color: #2a8a88;
+    --secondary-color: #f1f1f1;
+    --background-color: #f8f9fa;
+    --text-color-primary: #333333;
+    --text-color-secondary: #666666;
+}
+
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    color: var(--text-color-primary);
+}
+
+.menu-item:hover {
+    background-color: var(--secondary-color);
+}
+
+
+.appointment-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.menu-item i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.appointment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.appointment-date {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text-color-primary);
+}
+
+
+.appointment-time {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+
+.doctor-name {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+
+.menu-item i.fa-chevron-right {
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .menu-container {
+        padding: 10px;
+    }
+
+    .menu-item {
+        padding: 10px;
+    }
+
+    .appointment-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .appointment-info {
+        gap: 3px;
+    }
+
+    .menu-item i.fa-chevron-right {
+        display: none;
+    }
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00b5ad;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.bottom-nav .active {
+    background: white;
+    color: #008080;
+    border-radius: 50%;
+    padding: 10px;
+}
+.tab-button {
+    background-color: #959898;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .tab-button:hover {
+    background-color: #00b5ad;
+    transform: scale(1.05);
+  }
+  
+  .tab-button.active {
+    background-color: #00b92d; /* Vert */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h4 {
+    color: #00b5ad;
+  }
+  
+  input.form-control {
+    border: 2px solid #a5d6a7;
+  }
+  
+  input.form-control:focus {
+    border-color: #00b5ad;
+    box-shadow: 0 0 0 0.2rem rgba(102, 187, 106, 0.25);
+  }
+  
+  .custom-header {
+    background-color: #00b5ad;
+    color: white;
+  }
+  
+  input::placeholder {
+    color: #6c757d;
+  }
+  
+  input.form-control {
+    padding-left: 2.5rem;
+  }
+  
+  :root {
+    --turquoise: #1abc9c;
+  }
+  
+  input.form-control {
+    border: 2px solid var(--turquoise);
+    border-radius: 50px;
+    padding-left: 2.5rem;
+    box-shadow: none;
+  }
+  
+  input.form-control:focus {
+    border-color: var(--turquoise);
+    box-shadow: 0 0 0 0.1rem rgba(26, 188, 156, 0.25);
+  }
+  
+  select.form-select {
+    border: 2px solid var(--turquoise);
+    border-radius: 50px;
+    box-shadow: none;
+  }
+  
+  select.form-select:focus {
+    border-color: var(--turquoise);
+    box-shadow: 0 0 0 0.1rem rgba(26, 188, 156, 0.25);
+  }
+  

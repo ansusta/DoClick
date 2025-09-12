@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .reset-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  
+  .btn-success {
+    background: #00b5ad;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background: #019c96;
+  }
